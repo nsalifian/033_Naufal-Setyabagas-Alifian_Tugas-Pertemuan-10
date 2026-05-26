@@ -1,51 +1,50 @@
-# Tugas Pemrograman Web Pertemuan 10
-
-## Identitas
-- Nama: Naufal Setyabagas Alifian
-- NIM: 60324033
-- Kelas: B
-- Mata Kuliah: Pemorgraman Web 2
+Nama    : Naufal Setyabagas Alifian
+NIM     : 60324033
+Kelas   : Pemprograman Web B
+## Deskripsi
+Project tugas Laravel mengenai migration tabel kategori, seeder, accessor, dan scope pada model Buku dan Anggota.
 
 ---
 
-# Tugas yang dibuat
+## Fitur
 
-## Tugas 1 - Migration Tabel Kategori 
-- Membuat migration untuk tabel `kategori`
-- Membuat Model `Kategori` dengan fillable
-- Membuat Seeder `KategoriSeeder` dengan 5 data kategori
-- Struktur tabel: id, nama_kategori, deskripsi, icon, warna, timestamps
+### Tugas 1
+- Migration tabel `kategori`
+- Model `Kategori`
+- Seeder data kategori:
+  - Programming
+  - Database
+  - Web Design
+  - Networking
+  - Data Science
 
-## Tugas 2 - Model Accessor & Scope 
-- Menambahkan accessor `status_stok_badge` dan `tahun_label` pada Model Buku
-- Menambahkan scope `stokMenipis`, `hargaRange`, dan `terbaru` pada Model Buku
-- Menambahkan accessor `status_badge` dan `kategori_usia` pada Model Anggota
-- Menambahkan scope `terdaftarBulanIni` pada Model Anggota
-- Membuat route testing `/test-accessor-scope`
+### Tugas 2
 
----
+#### Model Buku
+Accessor:
+- status_stok_badge
+- tahun_label
 
-# Screenshot Hasil
+Scope:
+- stokMenipis()
+- hargaRange()
+- terbaru()
 
-> Semua screenshot disimpan di folder `image/`
+#### Model Anggota
+Accessor:
+- status_badge
+- kategori_usia
 
-## 1. Hasil Migration
-Menampilkan status migration yang berhasil dijalankan.
-
-![Hasil Migration](image/1.png)
-
----
-
-## 2. Hasil Seeder (Data Kategori di Database)
-Menampilkan 5 data kategori yang berhasil di-seed ke database.
-
-![Hasil Seeder](image/2.png)
-
----
-
-## 3. Route `/test-accessor-scope`
-Menampilkan hasil testing accessor dan scope pada Model Buku dan Anggota.
-
-![Hasil Testing Accessor & Scope](image/3.png)
+Scope:
+- jenisKelamin()
+- terdaftarBulanIni()
 
 ---
+
+## Cara Menjalankan
+
+```bash
+composer install
+php artisan migrate
+php artisan db:seed
+php artisan serve
